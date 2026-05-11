@@ -1,0 +1,200 @@
+/* ==========================================================================
+   Avis Client — styles front-end
+   Chargé via wp_enqueue_style() depuis avis-client.php
+   ========================================================================== */
+
+/* ── Formulaire de dépôt ──────────────────────────────────── */
+
+.avis-form-container {
+    background: #f9f9f9;
+    padding: 24px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    max-width: 600px;
+}
+
+.avis-form-container label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.avis-form-container input[type="text"],
+.avis-form-container select,
+.avis-form-container textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.avis-form-container textarea {
+    resize: vertical;
+}
+
+.avis-form-container button[type="submit"] {
+    background: #0073aa;
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-top: 8px;
+    transition: background 0.15s ease;
+}
+
+.avis-form-container button[type="submit"]:hover {
+    background: #005a87;
+}
+
+/* ── Messages d'état ─────────────────────────────────────── */
+
+.avis-error {
+    color: #c0392b;
+    padding: 12px 16px;
+    border: 1px solid #f5c6cb;
+    border-radius: 6px;
+    background: #fdecea;
+}
+
+.avis-info {
+    color: #0c5460;
+    padding: 12px 16px;
+    border: 1px solid #bee5eb;
+    border-radius: 6px;
+    background: #d1ecf1;
+}
+
+.avis-success {
+    padding: 16px 20px;
+    border: 1px solid #c3e6cb;
+    border-radius: 6px;
+    background: #d4edda;
+    color: #155724;
+}
+
+.avis-success h3 {
+    margin: 0 0 6px;
+}
+
+/* ── Liste des avis ──────────────────────────────────────── */
+
+.avis-liste-wrapper {
+    max-width: 720px;
+}
+
+/* Résumé (note moyenne) */
+.avis-resume {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding: 16px 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+
+.avis-resume__moyenne {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #222;
+    line-height: 1;
+}
+
+.avis-resume__etoiles {
+    font-size: 1.3rem;
+}
+
+.avis-resume__total {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Carte individuelle */
+.avis-carte {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 16px;
+    transition: box-shadow 0.15s ease;
+}
+
+.avis-carte:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+
+.avis-carte__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.avis-carte__nom {
+    font-size: 1rem;
+    color: #222;
+}
+
+.avis-carte__date {
+    margin-left: auto;
+    font-size: 0.85rem;
+    color: #999;
+}
+
+.avis-carte__contenu {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.65;
+}
+
+.avis-carte__contenu p:last-child {
+    margin-bottom: 0;
+}
+
+/* ── Étoiles ─────────────────────────────────────────────── */
+
+.avis-etoiles {
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+.etoile.pleine,
+.etoile.demi {
+    color: #f5a623;
+}
+
+.etoile.vide {
+    color: #ddd;
+}
+
+/* ── Badge "Avis vérifié" ────────────────────────────────── */
+
+.avis-badge-verifie {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #e6f4ea;
+    color: #1a7335;
+    border: 1px solid #a8d5b5;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 2px 10px;
+    cursor: help;
+    white-space: nowrap;
+}
+
+/* ── Divers ──────────────────────────────────────────────── */
+
+.avis-aucun {
+    color: #888;
+    font-style: italic;
+}

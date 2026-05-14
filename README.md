@@ -1,79 +1,77 @@
-Avis Client (Vérifiés par Token)
-Un plugin WordPress robuste pour collecter et afficher des avis clients authentiques. Le système utilise des liens sécurisés (HMAC-SHA256) envoyés par e-mail pour garantir que chaque avis provient d'un client réel.
+Customer Reviews (Token-Verified)
+A robust WordPress plugin to collect and display authentic customer reviews. The system uses secure links (HMAC-SHA256) sent via email to ensure each review comes from a real customer.
 
-🚀 Fonctionnalités
-Custom Post Type dédié : Gestion simplifiée des avis dans le tableau de bord.
+🚀 Features
+Dedicated Custom Post Type: Simplified review management within the dashboard.
 
-Sécurisation HMAC : Liens d'invitation uniques, horodatés et signés numériquement.
+HMAC Security: Unique, timestamped, and digitally signed invitation links.
 
-Protection anti-doublon : Un seul avis possible par lien/identifiant client.
+Duplicate Protection: Only one review allowed per link/customer ID.
 
-Badge "Avis Vérifié" : Identification visuelle des avis issus d'un lien sécurisé.
+"Verified Review" Badge: Visual identification for reviews submitted via secure links.
 
-Interface d'envoi d'invitations : Envoyez des demandes d'avis directement depuis l'administration.
+Invitation Interface: Send review requests directly from the admin area.
 
-Shortcodes flexibles : Formulaire de dépôt et liste d'affichage personnalisable.
+Flexible Shortcodes: Customizable submission form and display list.
 
 🛠️ Installation
-Téléchargez le dossier du plugin dans /wp-content/plugins/.
+Upload the plugin folder to /wp-content/plugins/.
 
-Activez le plugin via le menu Extensions de WordPress.
+Activate the plugin via the WordPress Plugins menu.
 
-Créez une page (ex: "Laissez votre avis") et insérez le shortcode [formulaire_avis].
+Create a page (e.g., "Leave a Review") and insert the shortcode [formulaire_avis].
 
-(Optionnel) Pour plus de sécurité, ajoutez une clé secrète dans votre fichier wp-config.php :
+(Optional) For enhanced security, add a secret key to your wp-config.php file:
 
 PHP
-define( 'AVIS_TOKEN_SECRET', 'votre_phrase_tres_longue_et_aleatoire' );
-📖 Utilisation
-Afficher les avis
+define( 'AVIS_TOKEN_SECRET', 'your_very_long_random_phrase' );
+📖 Usage
+Displaying Reviews
 
-Utilisez le shortcode suivant pour afficher la liste des avis publiés :
-
+Use the following shortcode to display the list of published reviews:
 [liste_avis nombre="5" note_min="4" only_verified="1"]
 
-Paramètres disponibles :
+Available parameters:
 
-nombre : Nombre d'avis à afficher (défaut : 10).
+nombre: Number of reviews to display (default: 10).
 
-note_min : Filtrer par note minimale de 1 à 5 (défaut : 1).
+note_min: Filter by minimum rating from 1 to 5 (default: 1).
 
-only_verified : Afficher uniquement les avis avec badge vérifié (0 ou 1).
+only_verified: Display only reviews with a verified badge (0 or 1).
 
-Collecter des avis
+Collecting Reviews
 
-Allez dans Avis Clients > Envoyer une invitation.
+Go to Customer Reviews > Send Invitation.
 
-Remplissez le nom, l'e-mail du client et sélectionnez la page où vous avez placé le formulaire.
+Enter the customer's name, email, and select the page where you placed the form.
 
-Le client recevra un lien unique valable 7 jours.
+The customer will receive a unique link valid for 7 days.
 
-🏗️ Structure du Code
-webbyrom-avis.php : Fichier principal, définitions des constantes et chargement des modules.
+🏗️ Code Structure
+webbyrom-avis.php: Main file, constant definitions, and module loading.
 
-includes/cpt.php : Déclaration du type de contenu "Avis Clients".
+includes/cpt.php: Custom Post Type declaration for "Customer Reviews".
 
-includes/token.php : Logique de génération et vérification des signatures HMAC.
+includes/token.php: Logic for generating and verifying HMAC signatures.
 
-includes/shortcodes.php : Logique d'affichage du formulaire et de la liste.
+includes/shortcodes.php: Display logic for the form and the list.
 
-admin/admin-page.php : Interface d'administration et méta-box.
+admin/admin-page.php: Administration interface and meta-boxes.
 
-🛡️ Sécurité
-Le plugin utilise plusieurs couches de protection :
+🛡️ Security
+The plugin uses multiple layers of protection:
 
-Nonces WordPress pour la protection contre les attaques CSRF sur le formulaire.
+WordPress Nonces for CSRF protection on the form.
 
-Sanitisation et Escaping systématiques des données (entrée/sortie).
+Systematic Sanitization and Escaping of data (input/output).
 
-Vérification de capacité (manage_options) pour les fonctions d'administration.
+Capability checks (manage_options) for administrative functions.
 
-Expiration des jetons : Les liens expirent automatiquement après le délai défini par AVIS_TOKEN_TTL.
+Token Expiration: Links automatically expire after the duration defined by AVIS_TOKEN_TTL.
 
-Informations techniques
+Technical Information
+Version: 2.1.0
 
-Version : 2.1.0
+License: GPL-2.0-or-later
 
-Licence : GPL-2.0-or-later
-
-Auteur : Romain Fourel (WebByRom)
+Author: Romain Fourel (WebByRom)
